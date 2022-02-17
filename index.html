@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div class="container">
+        <nav>
+            <ul>
+                <li>Beach</li>
+                <li>Mountain</li>
+                <li>Tree</li>
+                <li>Desert</li>
+                <li>Seashore</li>
+            </ul>
+        </nav>
+        <section>
+            <img src="images/ishan-seefromthesky.jpg" alt="Swirls">
+            <img src="images/kyle-johnson.jpg" alt="Swirls">
+            <img src="images/sanjeevan-satheeskumar.jpg" alt="Swirls">
+            <img src="images/victor-he.jpg" alt="Swirls">
+            <img src="images/william-manuel-son.jpg" alt="Swirls">
+        </section>
+    </div>
+
+    <script>
+        const listItems = document.querySelectorAll('li')
+            photos = document.querySelectorAll('img');
+
+        listItems.forEach((li, i) => {
+            li.addEventListener('mouseenter', () =>{
+                photos[i].classList.add('intro');
+            })
+
+            li.addEventListener('mouseleave', () =>{
+                photos[i].classList.remove('intro');
+            })
+            li.addEventListener('mousemove', (e) =>{
+                photos[i].style.left = - e.clientX * .9 + 'px'
+                photos[i].style.top = - e.clientY * .9 + 170 + 'px';
+            })
+        })
+    </script>
+</body>
+</html>
