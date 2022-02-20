@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;0,800;1,500&display=swap');
+
+body{
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+img{
+    width: 100%;
+    visibility: hidden;
+    position: absolute;
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    transition: clip-path .5s;
+}
+
+.container{
+    display: flex;
+    margin: 5em 0 5em 5em;
+    position: relative;
+}
+
+section{
+    width: 800px;
+    position: absolute;
+    right: 10em;
+}
+
+nav{
+    margin-right: 4em;
+    position: fixed;
+    width: 800px;
+    text-align: left;
+}
+
+ul{
+    list-style-type: none;
+    width: 10em;
+    
+    li{
+        text-transform: uppercase;
+        padding: .8em 0 .8em .8em;
+        cursor: pointer;
+        // https://9elements.github.io/fancy-border-radius/#41.25.62.88--.
+        border-radius: 25% 75% 12% 88% / 41% 62% 38% 59% ;
+        position: relative;
+        transition: border-radius 1s;
+
+        &:before{
+            position: absolute;
+            content: '';
+            width: 0;
+            border-bottom: 2px solid black;
+            top: 1.45em;
+            transition: width 1s;
+
+        }
+
+        &:hover{
+            border: 1px solid gray;
+            border-radius: 63% 37% 67% 33% / 84% 16% 84% 16% ;
+
+            &:before{
+                width: 80%;
+            }
+        }
+    }
+}
+
+.intro{
+    visibility: visible;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+// comment to git 
